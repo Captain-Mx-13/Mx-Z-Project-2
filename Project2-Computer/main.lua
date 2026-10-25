@@ -11,6 +11,14 @@ require("L5")
   -- array of all stories
   storyArray = {storyBeauty, storyDream, storyTwin, storyCare}
 
+  -- background patterns
+  --shapeA = ellipse(100+i, 100+i, 20, 20)
+  --shapeB = rect(100+i, 100+i, 20, 20)
+  --shapeC = ellipse(100+i, 100+i, 20, 35)
+  --shapeD = rect(100+i, 100+i, 20, 35)
+  -- array of all shapes
+  --shapeArray = {shapeA, shapeB, shapeC, shapeD}
+
 function setup()
   size(800, 500)
   windowTitle("Project 2")
@@ -20,7 +28,10 @@ function setup()
   textSize(38)
   textFont(font)
 
-  
+  --for i = 10, 10, 1 do
+    --fill(100 + i*5)
+   --random(shapeArray)
+  --end
 
   -- randomly selects one story and displays it
   currentStory = random(storyArray)
@@ -31,7 +42,7 @@ end
 -- advances story with mouse click
 function mousePressed()
   currentSentence = currentSentence+1
-  -- rests story when it reaches the end
+  -- resets story when it reaches the end
   if currentSentence > 7 then
     currentSentence = 1
     currentStory = random(storyArray)
