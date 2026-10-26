@@ -12,12 +12,9 @@ require("L5")
   storyArray = {storyBeauty, storyDream, storyTwin, storyCare}
 
   -- background patterns
-  --shapeA = ellipse(100+i, 100+i, 20, 20)
-  --shapeB = rect(100+i, 100+i, 20, 20)
-  --shapeC = ellipse(100+i, 100+i, 20, 35)
-  --shapeD = rect(100+i, 100+i, 20, 35)
-  -- array of all shapes
-  --shapeArray = {shapeA, shapeB, shapeC, shapeD}
+ -- want to create a series of backgrounds using for loops and then put them in an array to be used randomly
+ --backgroundA = (for i = 10, 10, 1 do fill(100 + i*5) ellipse (100 + i, 100 + i, 20, 20) end)
+  backgroundB = rect(100+i, 100+i, 20, 20)
 
 function setup()
   size(800, 500)
@@ -27,11 +24,6 @@ function setup()
   textAlign(CENTER)
   textSize(38)
   textFont(font)
-
-  --for i = 10, 10, 1 do
-    --fill(100 + i*5)
-   --random(shapeArray)
-  --end
 
   -- randomly selects one story and displays it
   currentStory = random(storyArray)
@@ -47,6 +39,8 @@ function mousePressed()
     currentSentence = 1
     currentStory = random(storyArray)
   end
+
+  -- choses a background pattern from an array above and then draws a new one of those on every click
 
 -- new background and new story
   background(random(200), random(200), random(200))
