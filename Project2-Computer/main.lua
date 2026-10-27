@@ -11,23 +11,18 @@ require("L5")
   -- array of all stories
   storyArray = {storyBeauty, storyDream, storyTwin, storyCare}
 
-  -- background patterns
- -- want to create a series of backgrounds using for loops and then put them in an array to be used randomly
- --backgroundA = (for i = 10, 10, 1 do fill(100 + i*5) ellipse (100 + i, 100 + i, 20, 20) end)
-  backgroundB = rect(100+i, 100+i, 20, 20)
-
 function setup()
   size(800, 500)
   windowTitle("Project 2")
   font = loadFont('Assets/cMedium.ttf')
   background(random(180), random(180), random(180))
+  noStroke()
   textAlign(CENTER)
-  textSize(38)
+  textSize(35)
   textFont(font)
 
   -- randomly selects one story and displays it
   currentStory = random(storyArray)
-
   text(currentStory[currentSentence], width * 0.5, height * 0.5)
 end
 
@@ -40,9 +35,33 @@ function mousePressed()
     currentStory = random(storyArray)
   end
 
-  -- choses a background pattern from an array above and then draws a new one of those on every click
-
--- new background and new story
+  -- new background and new story
   background(random(200), random(200), random(200))
   text(currentStory[currentSentence], width * 0.5, height * 0.5)
+end
+
+-- border design (top, bottom, left, right)
+function draw()
+  for i = 1, 19, 1 do
+    fill(i*15, 100, 100)
+    ellipse(1+i*40,15,20,20)
+  end
+
+  for i = 1, 19, 1 do
+    fill(100, 100, i*15)
+    ellipse(1+i*40, 480, 20, 20)
+  end
+
+  for i = 1, 11, 1 do
+    fill(i*15, 100+i*15, 100)
+    ellipse(15, 0+i*40, 20, 20)
+  end
+
+  for i = 1, 11, 1 do
+    fill(240-i*10, 100, 60+i*35)
+    ellipse(780, 0+i*40, 20, 20)
+  end
+
+  -- keeps text white
+  fill(255)
 end
