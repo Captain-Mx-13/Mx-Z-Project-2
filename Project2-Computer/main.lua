@@ -17,8 +17,9 @@ require("L5")
   starsImg = loadImage('assets/StarsBg.png')
   fourPointsImg = loadImage('assets/FourPointBg.png')
   flowersImg = loadImage('assets/FlowersBg.png')
+  wavesImg = loadImage('assets/WavesBg.png')
   -- array of background images
-  imageArray = {diamondImg, paperImg, starsImg, fourPointsImg, flowersImg}
+  imageArray = {diamondImg, paperImg, starsImg, fourPointsImg, flowersImg, wavesImg}
 
 function setup()
   size(800, 500)
