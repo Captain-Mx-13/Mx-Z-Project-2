@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Project2-Computer",
+			"path": "Project2-Computer"
+		}
+	],
+	"settings": {
+		"Lua.diagnostics.disable": [
+			"unused-local"
+		]
+	}
+}
