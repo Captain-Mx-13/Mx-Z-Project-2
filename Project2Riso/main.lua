@@ -11,15 +11,8 @@ require("L5")
   -- array of all stories
   storyArray = {storyBeauty, storyDream, storyTwin, storyCare}
 
-  -- background images
-  diamondImg = loadImage('assets/DiamondBg.png')
-  paperImg = loadImage('assets/LinedBg.png')
-  starsImg = loadImage('assets/StarsBg.png')
-  fourPointsImg = loadImage('assets/FourPointBg.png')
-  flowersImg = loadImage('assets/FlowersBg.png')
-  wavesImg = loadImage('assets/WavesBg.png')
-  -- array of background images
-  imageArray = {diamondImg, paperImg, starsImg, fourPointsImg, flowersImg, wavesImg}
+  -- background image
+  fourPointsImg = loadImage('assets/FourPointRiso.png')
 
 function setup()
   size(700, 400)
@@ -27,22 +20,25 @@ function setup()
   font = loadFont('Assets/cMedium.ttf')
   noStroke()
   textAlign(CENTER)
-  textSize(35)
+  textSize(30)
   textFont(font)
 
   -- creates background color
+  fill(255)
+  rect(0, 0, 700, 400)
+
   fill(255, 72, 176, 200)
   rect(0, 0, 700, 400)
 
   fill(255, 232, 0, 100)
   rect(0, 0, 700, 400)
   
-  -- randomly selects from a background image
-  currentImage = random(imageArray)
-  image(currentImage, 0, 0, width *1)
+  -- background image
+  image(fourPointsImg, 0, 0, width *1)
 
   -- randomly selects one story and displays it
   currentStory = random(storyArray)
+  fill(0)
   text(currentStory[currentSentence], width * 0.5, height * 0.5)
 end
 
@@ -56,17 +52,20 @@ function mousePressed()
   end
 
   -- keeps background
+  fill(255)
+  rect(0, 0, 700, 400)
+
   fill(255, 72, 176, 200)
   rect(0, 0, 700, 400)
 
   fill(255, 232, 0, 100)
   rect(0, 0, 700, 400)
 
-  -- new image 
-  currentImage = random(imageArray)
-  image(currentImage, 0, 0, width *1)
-  
+  -- keeps image
+  image(fourPointsImg, 0, 0, width *1)
+
   -- new story
+  fill(0)
   text(currentStory[currentSentence], width * 0.5, height * 0.5)
 end
 
@@ -94,4 +93,10 @@ function draw()
 
   -- keeps text black
   fill(0)
+end
+
+function keyPressed()
+   if key == 's' then
+    save('risoImage.png')
+   end
 end
