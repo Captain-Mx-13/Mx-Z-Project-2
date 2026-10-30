@@ -25,12 +25,18 @@ function setup()
   size(700, 400)
   windowTitle("Project 2-Riso Verison")
   font = loadFont('Assets/cMedium.ttf')
-  background(random(180), random(180), random(180))
   noStroke()
   textAlign(CENTER)
   textSize(35)
   textFont(font)
 
+  -- creates background color
+  fill(255, 72, 176, 100)
+  rect(0, 0, 700, 400)
+
+  fill(255, 232, 0, 100)
+  rect(0, 0, 700, 400)
+  
   -- randomly selects from a background image
   currentImage = random(imageArray)
   image(currentImage, 0, 0, width *1)
@@ -49,8 +55,7 @@ function mousePressed()
     currentStory = random(storyArray)
   end
 
-  -- new random background and image 
-  background(random(200), random(200), random(200))
+  -- new image 
   currentImage = random(imageArray)
   image(currentImage, 0, 0, width *1)
   
@@ -61,25 +66,25 @@ end
 -- border design (top, bottom, left, right)
 function draw()
   for i = 1, 19, 1 do
-    fill(i*15, 100, 100)
+    fill(0, 120, 191)
     ellipse(1+i*40,15,20,20)
   end
 
   for i = 1, 19, 1 do
-    fill(100, 100, i*15)
+    fill(0, 120, 191)
     ellipse(1+i*40, 480, 20, 20)
   end
 
   for i = 1, 11, 1 do
-    fill(i*15, 100+i*15, 100)
+    fill(255, 72, 176)
     ellipse(15, 0+i*40, 20, 20)
   end
 
   for i = 1, 11, 1 do
-    fill(240-i*10, 100, 60+i*35)
+    fill(255, 72, 176)
     ellipse(780, 0+i*40, 20, 20)
   end
 
-  -- keeps text white
-  fill(255)
+  -- keeps text black
+  fill(0)
 end
